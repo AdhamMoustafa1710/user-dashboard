@@ -31,6 +31,7 @@ yarn-error.log
 # Miscellaneous
 node_modules/
 dist/
+/dist
 .angular/
 /.angular/cache
 .sass-cache/
