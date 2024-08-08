@@ -1,0 +1,11 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.content-container {
+    min-height: calc(100vh - 100px);
+    padding-bottom: 20px;
+}

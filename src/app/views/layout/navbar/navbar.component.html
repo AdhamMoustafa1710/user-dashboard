@@ -1,0 +1,24 @@
+<nav class="navbar bg-body-tertiary d-flex justify-content-center align-items-center">
+  <div class="d-flex justify-content-between w-100 px-3 align-items-center">
+    <span class="navbar-brand mb-0 h1">Dynamic User Dashboard</span>
+    <div class="search-container" (click)="$event.stopPropagation()" #searchContainer>
+      <div *ngIf="isLoading" class="spinner-area">
+        <app-load-spinner [isSmall]="true"></app-load-spinner>
+      </div>
+      <mat-form-field appearance="outline" subscriptSizing="dynamic" class="">
+        <input matInput placeholder="Search user by ID" [formControl]="searchControl">
+      </mat-form-field>
+      <div class="user-card-container" *ngIf="showSearchResult">
+        <div class="user-card" [class.visible]="user" (click)="onUserClick(user)">
+          <img [src]="user?.avatar" [alt]="user?.first_name + ' ' + user?.last_name">
+          <div class="user-details">
+            <h3>{{ user?.first_name }} {{ user?.last_name }}</h3>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="userNotFound && hasSearched && noSearchValue && searchControl.value != '' " class="user-not-found">
+        User not found
+      </div>
+    </div>
+  </div>
+</nav>

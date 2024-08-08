@@ -1,0 +1,34 @@
+<div class="user-card-container">
+    <mat-card *ngFor="let user of users" class="user-card" (click)="onUserClick(user)">
+        <div class="card-content d-flex">
+            <mat-card-header>
+                <div mat-card-avatar>
+                    <img [src]="user.avatar" alt="Avatar" class="avatar">
+                </div>
+                <mat-card-title>{{user.first_name}} {{user.last_name}}</mat-card-title>
+                <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
+            </mat-card-header>
+            <div class="arrow-container d-flex justify-content-center align-items-center ms-auto">
+                <img width="30px" height="auto" class="arrow"
+                    src="../../../../assets/images/user/arrow-ios-back-svgrepo-com.svg" alt="goto">
+            </div>
+        </div>
+    </mat-card>
+    <div *ngIf="!allResultsLoaded"
+        class="load-more-card d-flex justify-content-center align-items-center w-25 mx-auto ">
+        <div class="card-content text-center">
+            <p>Scroll down to load more</p>
+            <div class="down-arrow-container d-flex justify-content-center align-items-center ms-auto">
+                <img width="30px" height="auto" class="arrow"
+                    src="../../../../assets/images/user/arrow-ios-back-svgrepo-com.svg" alt="goto">
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="loading" class="loading-spinner">
+        <app-load-spinner></app-load-spinner>
+    </div>
+    <div *ngIf="showMaxResultsMessage" class="max-results-message bg-warning">
+        Maximum results available. No more data to load.
+    </div>
+</div>

@@ -1,0 +1,58 @@
+<div *ngIf="!isLoading" class="user d-flex justify-content-center align-items-center ">
+    <div class="back-button d-flex justify-content-start align-items-start  position-relative"
+        (click)="_location.back()">
+        <img width="50px" height="auto" src="../../../../../assets/images/user/arrow-ios-back-svgrepo-com.svg"
+            alt="back-button" class="cursor-pointer">
+    </div>
+    <mat-card appearance="outlined">
+
+
+        <mat-card-content>
+            <div class="card-container d-flex justify-content-center justify-content-md-start align-item-center ">
+
+                <div
+                    class="user-data d-flex my-3 justify-content-evenly align-items-center gap-4 flex-column flex-md-row">
+
+                    <div class="avatar">
+                        <img width="300px" height="auto" [src]="user?.avatar" alt="user">
+                    </div>
+
+                    <div class="user-details d-flex justify-content-center align-items-center flex-column gap-5 ">
+                        <div class="first_name fw-semibold font-user-data text-start w-100">
+                            Name: {{user?.first_name}} {{user.last_name}}
+                        </div>
+                        <div class="id d-flex  align-items-center w-100 fw-semibold font-user-data text-start w-100">
+                            ID: {{user?.id}}
+                        </div>
+                        <div
+                            class="email d-flex  align-items-center  cursor-pointer fw-semibold font-user-data text-start w-100">
+                            Email: {{user?.email}}
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+            <div class="about p-2 d-flex flex-column">
+                <span class="fw-bold fs-4 text-center text-capitalize">About {{user?.first_name}} {{user.last_name}}
+                </span>
+                <span class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, cupiditate
+                    voluptatum?
+                    Tempora harum numquam veniam itaque quo magni exercitationem, ea sed aut iusto nesciunt? Nulla,
+                    recusandae quia. Voluptatum ipsa soluta voluptate laboriosam ea animi. Quibusdam quae, aliquam
+                    nemo suscipit Tempora harum numquam veniam itaque quo magni exercitationem, ea sed aut iusto
+                    nesciunt? Nulla,
+                    recusandae quia. Voluptatum ipsa soluta voluptate laboriosam ea animi. Quibusdam quae, aliquam
+                    nemo suscipit quia blanditiis dolore, pariatur.</span>
+
+            </div>
+
+        </mat-card-content>
+    </mat-card>
+</div>
+<div *ngIf="isLoading" class="loading d-flex justify-content-center align-items-center h-100">
+    <app-load-spinner></app-load-spinner>
+</div>
