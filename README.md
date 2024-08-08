@@ -1,4 +1,3 @@
-Here's your README file styled with Markdown, including code boxes for git-related commands:
 
 # Project: Dynamic User Dashboard
 
