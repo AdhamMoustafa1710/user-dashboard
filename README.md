@@ -3,6 +3,8 @@
 
 This Angular-based application provides a user-friendly interface for managing and viewing user data. The project aims to create an efficient, responsive, and feature-rich user management system with the following key components:
 
+## Project Link: https://adhammoustafa1710.github.io/user-dashboard/users
+
 ## Features
 
 ### User List Page:
@@ -79,4 +81,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 Adham Moustafa - [LinkedIn](https://www.linkedin.com/in/adham09/)
 
-Project Link: https://adhammoustafa1710.github.io/user-dashboard/users
+
