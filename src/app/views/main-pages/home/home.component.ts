@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { GeneralService } from '@app/core/services/general.service';
+import { User } from '@models/users.model'
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { GeneralService } from '@app/core/services/general.service';
   styleUrls: [ './home.component.scss' ]
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  users: any[] = [];
+  users: User[] = [];
   private subs = new Subscription();
   loading: boolean = false;
   currentPage: number = 1;

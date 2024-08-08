@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { GeneralService } from '@app/core/services/general.service';
 import { Subscription } from 'rxjs';
 import { Location } from '@angular/common';
+import { User } from '@app/core/models/users.model.js';
 
 
 
@@ -13,7 +14,7 @@ import { Location } from '@angular/common';
 })
 export class SpecificUserComponent implements OnInit, OnDestroy {
     private subs = new Subscription();
-    user: any;
+    user!: User;
     isLoading: boolean = false
 
     constructor(

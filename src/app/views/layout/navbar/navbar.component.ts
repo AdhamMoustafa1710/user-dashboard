@@ -4,8 +4,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { debounceTime, distinctUntilChanged, finalize, switchMap, takeUntil, catchError } from 'rxjs/operators';
 import { of, Subject } from 'rxjs';
 import { GeneralService } from '@app/core/services/general.service';
+import { User } from '@app/core/models/users.model';
 
-
+type UserOrNull = User | null;
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -13,7 +14,8 @@ import { GeneralService } from '@app/core/services/general.service';
 })
 export class NavbarComponent implements OnInit, OnDestroy {
   searchControl = new FormControl('');
-  user: any;
+  user: UserOrNull = null;
+
   private destroy$ = new Subject<void>();
   noUser: boolean = false;
   isLoading: boolean = false
@@ -82,7 +84,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
       takeUntil(this.destroy$)
     ).subscribe(
       (response: any) => {
-        console.log('Response:', response);
         this.isLoading = false;
         this.hasSearched = true;
 

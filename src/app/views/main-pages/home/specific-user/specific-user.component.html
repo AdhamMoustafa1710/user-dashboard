@@ -14,19 +14,19 @@
                     class="user-data d-flex my-3 justify-content-evenly align-items-center gap-4 flex-column flex-md-row">
 
                     <div class="avatar">
-                        <img width="300px" height="auto" [src]="user?.avatar" alt="user">
+                        <img width="300px" height="auto" [src]="user.avatar" alt="user">
                     </div>
 
                     <div class="user-details d-flex justify-content-center align-items-center flex-column gap-5 ">
                         <div class="first_name fw-semibold font-user-data text-start w-100">
-                            Name: {{user?.first_name}} {{user.last_name}}
+                            Name: {{user.first_name}} {{user.last_name}}
                         </div>
                         <div class="id d-flex  align-items-center w-100 fw-semibold font-user-data text-start w-100">
-                            ID: {{user?.id}}
+                            ID: {{user.id}}
                         </div>
                         <div
                             class="email d-flex  align-items-center  cursor-pointer fw-semibold font-user-data text-start w-100">
-                            Email: {{user?.email}}
+                            Email: {{user.email}}
                         </div>
 
                     </div>
@@ -37,7 +37,8 @@
 
             </div>
             <div class="about p-2 d-flex flex-column">
-                <span class="fw-bold fs-4 text-center text-capitalize">About {{user?.first_name}} {{user.last_name}}
+                <span class="fw-bold fs-4 text-center text-capitalize">About {{user.first_name}}
+                    {{user.last_name}}
                 </span>
                 <span class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, cupiditate
                     voluptatum?
