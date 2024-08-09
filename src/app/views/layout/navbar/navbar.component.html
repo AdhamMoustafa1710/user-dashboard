@@ -9,7 +9,7 @@
         <input matInput placeholder="Search user by ID" [formControl]="searchControl">
       </mat-form-field>
       <div class="user-card-container" *ngIf="showSearchResult">
-        <div class="user-card" [class.visible]="user" (click)="onUserClick(user)">
+        <div class="user-card cursor-pointer" [class.visible]="user" (click)="onUserClick(user)">
           <img [src]="user?.avatar" [alt]="user?.first_name + ' ' + user?.last_name">
           <div class="user-details">
             <h3>{{ user?.first_name }} {{ user?.last_name }}</h3>
